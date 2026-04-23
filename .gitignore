@@ -1,0 +1,33 @@
+# Git ignore file for portfolio
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build/Dist
+dist/
+build/
+
+# Sensitive files
+*.key
+*.pem
+config/secrets.json
+
+# Temporary
+temp/
+tmp/
+*.tmp
