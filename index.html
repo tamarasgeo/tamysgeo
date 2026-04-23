@@ -19,34 +19,11 @@
     .btn-brand{background:var(--brand-600); border-color:var(--brand-600); color:#fff;}
     .btn-brand:hover{background:var(--brand-700); border-color:var(--brand-700); color:#fff;}
     .text-brand{color:var(--brand-400)!important}
-    .hero{position:relative; padding:7rem 0 4rem; overflow:hidden; background:#0f0e17;}
-    .hero::before{
-      content:'';
-      position:absolute; inset:0;
-      background:
-        radial-gradient(1200px 500px at 70% -10%, rgba(124,58,237,.25), transparent 60%),
-        radial-gradient(800px 400px at -10% 10%, rgba(139,92,246,.2), transparent 60%);
-      pointer-events:none;
-    }
-    .hero::after{
-      content:'';
-      position:absolute;
-      left:-10%;
-      bottom:-10%;
-      width:120%;
-      height:120%;
-      background: radial-gradient(circle at 50% 20%, rgba(124,58,237,.15), transparent 25%),
-                  radial-gradient(circle at 80% 60%, rgba(139,92,246,.12), transparent 30%);
-      mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
-      pointer-events:none;
-    }
+    .hero{padding:7rem 0 4rem; background:var(--bg);}
     .hero h1{letter-spacing:.4px; position:relative; z-index:1;}
     .badge-soft{background:rgba(139,92,246,.15); color:var(--brand-300); border:1px solid rgba(139,92,246,.25); display:inline-block; padding:.3rem .6rem; border-radius:999px; font-size:.8rem; margin:.2rem}
     .card{background:#141320; border:1px solid #241f3a; transition:.2s ease}
     .card:hover{transform:translateY(-2px); border-color:#3a2e66}
-    .link-muted{color:var(--muted); text-decoration:none}
-    .link-muted:hover{color:var(--fg)}
-    .avatar{width:100%; max-width:220px; height:auto; border-radius:50%; object-fit:cover; border:3px solid var(--brand-600);}
     .divider{height:1px; background:linear-gradient(90deg, transparent, #281b57, transparent)}
     .yt-thumb{aspect-ratio:16/9; width:100%; border-radius:12px; object-fit:cover; border:1px solid #2a2344}
     .tag{font-size:.75rem; padding:.2rem .5rem; border-radius:999px; border:1px solid #32285b; color:#cbb8ff; margin-right:.25rem; display:inline-block}
@@ -81,10 +58,6 @@
     .lb-close, .lb-prev, .lb-next {transition:all .15s ease;}
     .lb-close:hover, .lb-prev:hover, .lb-next:hover{background:#2d2350; border-color:var(--brand-600)}
     
-    /* Certificaciones */
-    .cert-thumb{width:100%; border-radius:12px; border:1px solid #2a2344; cursor:pointer; transition:.2s ease; object-fit:cover; aspect-ratio:16/11}
-    .cert-thumb:hover{border-color:var(--brand-600); transform:scale(1.02)}
-    
     /* Skills badges */
     .skill-category{margin-bottom:1.5rem}
     .skill-category h5{color:var(--brand-300); font-size:.95rem; margin-bottom:.7rem; font-weight:600}
@@ -98,12 +71,6 @@
 
     #experiencia h2{font-size:2.2rem; margin-bottom:2rem}
     #experiencia h4{font-size:1.35rem; font-weight:700; color:var(--fg)}
-    #experiencia .timeline-date{font-size:1rem}
-    #experiencia .text-brand{font-size:1.05rem}
-    #experiencia .text-muted{font-size:.95rem}
-    #experiencia ul{font-size:.95rem; line-height:1.7}
-    #experiencia ul li{margin-bottom:.5rem; color:var(--fg)}
-    #experiencia .tag{font-size:.8rem}
   </style>
 </head>
 <body>
@@ -116,11 +83,10 @@
       </button>
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tutoriales">Tutoriales</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certificaciones">Certificaciones</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#expertise">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#career">Trayectoria</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
           <li class="nav-item"><a class="btn btn-sm btn-brand ms-lg-2" target="_blank" href="https://www.linkedin.com/in/tamara-sep%C3%BAlveda-774093300/">LinkedIn</a></li>
         </ul>
       </div>
@@ -130,99 +96,83 @@
   <!-- HERO -->
   <header id="inicio" class="hero">
     <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-7">
-          <div class="mb-3">
-            <span class="badge-soft">🎓 Geógrafa Profesional</span>
-            <span class="badge-soft">📍 Santiago, Chile</span>
-          </div>
-          <h1 class="display-5 fw-800 mb-3">Especialista en <span class="text-brand">Inteligencia Geoespacial</span> y Análisis Territorial</h1>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h1 class="display-4 fw-800 mb-3">Tamara Sepúlveda</h1>
           <p class="lead mb-4" style="color:var(--muted)">
-            Transformo datos espaciales en soluciones estratégicas mediante análisis geoespacial avanzado, 
+            Geógrafa Profesional | Especialista en Inteligencia Geoespacial
+          </p>
+          <p class="mb-4">
+            Transformo datos espaciales en soluciones estratégicas mediante análisis geoespacial avanzado,
             teledetección y automatización de procesos GIS. Experiencia en proyectos para minería, cambio climático y ordenamiento territorial.
           </p>
-          <div class="d-flex gap-2 flex-wrap mb-4">
-            <a class="btn btn-brand btn-lg" href="#tutoriales">Ver tutoriales</a>
-            <a class="btn btn-outline-light btn-lg" href="#contacto">Contactar</a>
-          </div>
-          
-          <!-- Stats rápidos -->
-          <div class="row g-3 mt-2">
-            <div class="col-4">
-              <div class="stat-box">
-                <div class="stat-number">1+</div>
-                <div class="stat-label">Años experiencia</div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="stat-box">
-                <div class="stat-number" id="kpi-tuts">—</div>
-                <div class="stat-label">Tutoriales</div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="stat-box">
-                <div class="stat-number" id="kpi-projects">—</div>
-                <div class="stat-label">Proyectos</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-5 text-center">
-          <img class="avatar mb-4" src="https://avatars.githubusercontent.com/tamarasgeo" alt="Tamara Sepúlveda">
-          <div class="mb-3">
-            <h4 class="mb-2">Tamara Sepúlveda Araya</h4>
-            <div class="d-flex gap-2 justify-content-center flex-wrap">
-              <a href="mailto:thamafl0@gmail.com" class="btn btn-sm btn-outline-light">📧 Email</a>
-              <a href="tel:+56993303257" class="btn btn-sm btn-outline-light">📱 +56 9 9330 3257</a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
-    
   </header>
 
   <div class="divider my-5"></div>
 
-  <!-- COMPETENCIAS TÉCNICAS -->
-  <section class="py-4 bg-opacity-10" style="background:#1a1828">
+  <!-- EXPERTISE -->
+  <section id="expertise" class="py-5">
     <div class="container">
-      <h3 class="mb-4 text-center">Stack tecnológico</h3>
+      <h2 class="text-center mb-5">Experiencia</h2>
+
       <div class="row g-4">
-        <div class="col-md-3">
-          <div class="skill-category">
-            <h5>🗺️ Software GIS</h5>
-            <span class="skill-badge">ArcGIS Pro</span>
-            <span class="skill-badge">QGIS</span>
-            <span class="skill-badge">Global Mapper</span>
-            <span class="skill-badge">Google Earth Pro</span>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title mb-3">Análisis Geoespacial</h4>
+              <p class="card-text mb-3">
+                Desarrollo de estudios territoriales, modelación espacial avanzada y análisis de patrones
+                mediante SIG y teledetección para proyectos complejos en minería y medio ambiente.
+              </p>
+              <div class="mb-3">
+                <span class="skill-badge">ArcGIS Pro</span>
+                <span class="skill-badge">QGIS</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">R</span>
+                <span class="skill-badge">Modelación Espacial</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="skill-category">
-            <h5>💻 Programación</h5>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">R</span>
-            <span class="skill-badge">JavaScript</span>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title mb-3">Procesamiento Satelital</h4>
+              <p class="card-text mb-3">
+                Automatización de descarga y procesamiento masivo de imágenes satelitales.
+                Generación de índices espectrales y análisis temporal con Landsat, Sentinel y MODIS.
+              </p>
+              <div class="mb-3">
+                <span class="skill-badge">MODIS</span>
+                <span class="skill-badge">Landsat</span>
+                <span class="skill-badge">Sentinel</span>
+                <span class="skill-badge">NDVI/NDWI</span>
+                <span class="skill-badge">Automatización</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="skill-category">
-            <h5>🛰️ Teledetección</h5>
-            <span class="skill-badge">MODIS</span>
-            <span class="skill-badge">Landsat</span>
-            <span class="skill-badge">Sentinel</span>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="skill-category">
-            <h5>📊 Análisis</h5>
-            <span class="skill-badge">Modelación Espacial</span>
-            <span class="skill-badge">Kriging / IDW</span>
-            <span class="skill-badge">SPSS</span>
-            <span class="skill-badge">Dashboards</span>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title mb-3">Desarrollo GIS</h4>
+              <p class="card-text mb-3">
+                Creación de dashboards interactivos, APIs geoespaciales y soluciones web
+                para integración de datos en tiempo real y visualización de información territorial.
+              </p>
+              <div class="mb-3">
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">Dashboards</span>
+                <span class="skill-badge">APIs</span>
+                <span class="skill-badge">Web GIS</span>
+                <span class="skill-badge">Automatización</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -231,10 +181,10 @@
 
   <div class="divider my-5"></div>
 
-  <!-- EXPERIENCIA PROFESIONAL -->
-  <section id="experiencia" class="py-5">
+  <!-- CAREER HISTORY -->
+  <section id="career" class="py-5">
     <div class="container">
-      <h2 class="mb-4">Experiencia profesional</h2>
+      <h2 class="text-center mb-5">Trayectoria Profesional</h2>
       
       <div class="timeline-item">
         <div class="timeline-dot"></div>
@@ -302,145 +252,25 @@
 
   <div class="divider my-5"></div>
 
-  <!-- PROYECTOS -->
-  <section id="proyectos" class="py-5">
+  <!-- PERSONAL PROJECTS -->
+  <section id="projects" class="py-5">
     <div class="container">
-      <div class="d-flex align-items-end justify-content-between mb-4">
-        <div>
-          <h2 class="mb-1">Proyectos geoespaciales</h2>
-          <p class="text-muted small mb-0">Cartografía, modelación espacial y análisis de imágenes satelitales que permiten tomar decisiones más rápidas y precisas.</p>
-        </div>
-        <a class="link-muted" target="_blank" href="https://github.com/tamarasgeo">Ver repositorio completo →</a>
-      </div>
+      <h2 class="text-center mb-5">Proyectos Personales</h2>
+
       <div id="projects-grid" class="row g-4"></div>
     </div>
   </section>
 
   <div class="divider my-5"></div>
 
-  <!-- TUTORIALES -->
-  <section id="tutoriales" class="py-5">
-    <div class="container">
-      <div class="d-flex align-items-end justify-content-between mb-4">
-        <div>
-          <h2 class="mb-1">Tutoriales YT</h2>
-          
-        </div>
-        <a class="link-muted" target="_blank" href="https://www.youtube.com/@tamygeo">Ver canal completo →</a>
-      </div>
-      <div id="tutoriales-grid" class="row g-4"></div>
-    </div>
-  </section>
-
-  <div class="divider my-5"></div>
-
-  <!-- CERTIFICACIONES -->
-  <section id="certificaciones" class="py-5">
-    <div class="container">
-      <div class="mb-4">
-        <h2 class="mb-1">Formación profesional</h2>
-      </div>
-      
-      <!-- Educación Formal -->
-      <div class="mb-5">
-        <h4 class="mb-3 text-brand">Formación académica</h4>
-        <div class="row g-3">
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start mb-2">
-                  <h5 class="card-title mb-0">Diplomado en Análisis Espacial de Datos</h5>
-                  <span class="badge bg-primary">Completado</span>
-                </div>
-                <p class="text-brand small mb-2">Universidad de Chile • FAU</p>
-                <p class="text-muted small mb-0">2025 • Modalidad remota</p>
-                <p class="small mt-2">Formación especializada en análisis y visualización de datos georreferenciados con herramientas open-source (Python, R, QGIS)</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start mb-2">
-                  <h5 class="card-title mb-0">Pregrado en Geografía</h5>
-                  <span class="badge bg-primary">Completado</span>
-                </div>
-                <p class="text-brand small mb-2">Universidad de Chile • FAU</p>
-                <p class="text-muted small mb-0">2019 - 2024 • Modalidad presencial</p>
-                <p class="small mt-2">Egresada con distinciones máximas</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Galería de certificaciones -->
-      <div class="mb-3">
-        <h5 class="mb-3" style="color:var(--muted)">Certificados</h5>
-      </div>
-      
-      <div id="cert-grid" class="row g-4">
-      </div>
-    </div>
-  </section>
-
-  <div class="divider my-5"></div>
-
-  <!-- SERVICIOS -->
-  <section id="servicios" class="py-5" style="background:#0d0c15">
-    <div class="container">
-      <h2 class="mb-4 text-center">Servicios Profesionales</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <div class="mb-3" style="font-size:2rem">🗺️</div>
-              <h5 class="card-title">Análisis geoespacial</h5>
-              <p class="card-text small text-secondary">Estudios territoriales, modelación espacial (Kriging, IDW) e interpretación de patrones mediante SIG y teledetección para proyectos complejos.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <div class="mb-3" style="font-size:2rem">🛰️</div>
-              <h5 class="card-title">Procesamiento satelital masivo</h5>
-              <p class="card-text small text-secondary">Automatización de descarga y procesamiento de imágenes satelitales. Generación de índices espectrales (NDVI, NDWI, SAVI, TWI, LST) con Landsat, Sentinel y MODIS.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <div class="mb-3" style="font-size:2rem">🔧</div>
-              <h5 class="card-title">Automatización geoespacial</h5>
-              <p class="card-text small text-secondary">Desarrollo de scripts Python/R y APIs geoespaciales para optimizar flujos de trabajo, integrar datos multifuente y reducir tiempos de procesamiento.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <div class="mb-3" style="font-size:2rem">🌍</div>
-              <h5 class="card-title">Diagnósticos territoriales</h5>
-              <p class="card-text small text-secondary">Análisis de cambio climático, evaluación de vulnerabilidad, gestión de riesgos y planificación territorial con enfoque geográfico interdisciplinario.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider my-5"></div>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="py-5">
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
     <div class="container">
       <div class="row align-items-center g-4">
         <div class="col-lg-6">
           <h2 class="mb-3">Hablemos de tu proyecto</h2>
           <p class="lead text-muted mb-4">
-            ¿Necesitas análisis geoespacial, procesamiento de datos satelitales o desarrollo de soluciones GIS? 
+            ¿Necesitas análisis geoespacial, procesamiento de datos satelitales o desarrollo de soluciones GIS?
             Estoy disponible para proyectos y colaboraciones.
           </p>
           <div class="d-flex flex-column gap-3">
@@ -482,9 +312,9 @@
           <div class="card p-4">
             <h5 class="mb-3">Sobre mí</h5>
             <p class="small" style="line-height:1.7; color:var(--muted)">
-              Desde pequeña he sentido curiosidad por la tierra, por los datos, por la ciencia. 
+              Desde pequeña he sentido curiosidad por la tierra, por los datos, por la ciencia.
               Quizás por eso elegí la geografía: porque es una forma de escuchar.<br><br>
-              
+
               Mi misión es difundir a través de lo que se pueda observar, interpretar lo invisible.<br><br>
                   Cada mapa, para mí, es una conversación. Y hay algo esperando ser dicho,
                dado que el territorio tiene mucho que contar.
@@ -496,30 +326,12 @@
   </section>
 
   <footer class="footer py-4 border-top" style="border-color:#2d2350; background:#0a0912">
-    <div class="container">
-      <div class="row g-3">
-        <div class="col-md-6">
-          <h5 class="mb-2">Tamara Sepúlveda</h5>
-          <p class="small text-muted mb-2">Geógrafa Profesional | Especialista en Análisis Espacial</p>
-          <p class="small text-muted">© <span id="year"></span> Todos los derechos reservados</p>
-        </div>
-        <div class="col-md-3">
-          <h6 class="mb-2">Enlaces</h6>
-          <ul class="list-unstyled small">
-            <li><a href="#experiencia" class="link-muted">Experiencia</a></li>
-            <li><a href="#tutoriales" class="link-muted">Tutoriales</a></li>
-            <li><a href="#certificaciones" class="link-muted">Certificaciones</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h6 class="mb-2">Contacto</h6>
-          <ul class="list-unstyled small">
-            <li><a href="mailto:thamafl0@gmail.com" class="link-muted">Email</a></li>
-            <li><a href="tel:+56993303257" class="link-muted">Teléfono</a></li>
-            <li><a target="_blank" href="https://www.linkedin.com/in/tamara-sep%C3%BAlveda-774093300/" class="link-muted">LinkedIn</a></li>
-            <li><a target="_blank" href="https://github.com/tamarasgeo" class="link-muted">GitHub</a></li>
-          </ul>
-        </div>
+    <div class="container text-center">
+      <p class="small text-muted mb-2">© <span id="year"></span> Tamara Sepúlveda. Todos los derechos reservados</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a target="_blank" href="https://github.com/tamarasgeo" class="link-muted">GitHub</a>
+        <a target="_blank" href="https://www.linkedin.com/in/tamara-sep%C3%BAlveda-774093300/" class="link-muted">LinkedIn</a>
+        <a target="_blank" href="https://www.youtube.com/@tamygeo" class="link-muted">YouTube</a>
       </div>
     </div>
   </footer>
@@ -533,9 +345,44 @@
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Render tutoriales
-    const grid = document.getElementById('tutoriales-grid');
+    // Función para limpiar ID de YouTube
+    function cleanYouTubeId(id) {
+      // Si ya es un ID limpio (11 caracteres), devolverlo
+      if (id.length === 11) return id;
+      
+      // Extraer ID de URLs completas
+      const patterns = [
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+        /^([^&\n?#]{11})$/
+      ];
+      
+      for (const pattern of patterns) {
+        const match = id.match(pattern);
+        if (match) return match[1];
+      }
+      
+      // Si no coincide, devolver el ID original
+      return id;
+    }
+
+    // Render Proyectos (combina proyectos y tutoriales)
+    const projectsGrid = document.getElementById('projects-grid');
     const ytThumb = (id) => `https://img.youtube.com/vi/${cleanYouTubeId(id)}/hqdefault.jpg`;
+    
+    function renderProject(p){
+      const col = document.createElement('div');
+      col.className = 'col-md-6 col-lg-4';
+      const title = p.title || p.caption || 'Proyecto';
+      col.innerHTML = `
+        <div class="card h-100">
+          <img class="pf-thumb" src="${p.src}" alt="${title}" data-index="${title}" data-type="project">
+          <div class="card-body">
+            <h5 class="card-title mb-2">${title}</h5>
+            <p class="small text-muted mb-3">${p.description}</p>
+          </div>
+        </div>`;
+      return col;
+    }
     
     function renderTutorial(t){
       const clean = cleanYouTubeId(t.id);
@@ -560,53 +407,11 @@
       return col;
     }
     
-    tutorials.forEach(t=> grid.appendChild(renderTutorial(t)));
-    document.getElementById('kpi-tuts').textContent = tutorials.length;
-
-    // Render Proyectos
-    const projectsGrid = document.getElementById('projects-grid');
-    function renderProject(p){
-      const col = document.createElement('div');
-      col.className = 'col-md-6 col-lg-4';
-      const title = p.title || p.caption || 'Proyecto';
-      col.innerHTML = `
-        <div class="card h-100">
-          <img class="pf-thumb" src="${p.src}" alt="${title}" data-index="${title}" data-type="project">
-          <div class="card-body">
-            <h5 class="card-title mb-2">${title}</h5>
-            <p class="small text-muted mb-3">${p.description}</p>
-          </div>
-        </div>`;
-      return col;
-    }
+    // Agregar proyectos y tutoriales al grid
     projects.forEach(p=> projectsGrid.appendChild(renderProject(p)));
-    document.getElementById('kpi-projects').textContent = projects.length;
+    tutorials.forEach(t=> projectsGrid.appendChild(renderTutorial(t)));
 
-    // Render Certificaciones
-    const certGrid = document.getElementById('cert-grid');
-    if(certifications.length > 0) {
-      certifications.forEach((c, idx) => {
-        const col = document.createElement('div');
-        col.className = 'col-12 col-sm-6 col-md-4 col-lg-3';
-        col.innerHTML = `
-          <div class="card h-100">
-            <img class="cert-thumb" src="${c.src}" alt="${c.caption}" data-index="${idx}" data-type="certification">
-            <div class="card-body p-2">
-              <p class="small mb-0 text-center">${c.caption || 'Certificado'}</p>
-            </div>
-          </div>`;
-        certGrid.appendChild(col);
-      });
-    } else {
-      certGrid.innerHTML = `
-        <div class="col-12">
-          <div class="card text-center p-4">
-            <p class="text-muted mb-0">📸 Agrega imágenes de tus certificados en la sección de configuración del código</p>
-          </div>
-        </div>`;
-    }
-
-    // Lightbox para certificaciones
+    // Lightbox
     const certThumbs = document.querySelectorAll('.cert-thumb');
     const projectThumbs = document.querySelectorAll('.pf-thumb');
     const lbBackdrop = document.querySelector('.lightbox-backdrop');
@@ -644,10 +449,6 @@
 
     if(lbBackdrop) {
       document.addEventListener('click', (e)=>{
-        if(e.target.classList.contains('cert-thumb')){
-          const idx = parseInt(e.target.getAttribute('data-index'), 10);
-          openLB(idx, certifications);
-        }
         if(e.target.classList.contains('pf-thumb')){
           const title = e.target.getAttribute('data-index');
           const idx = projects.findIndex(p => (p.title === title || p.caption === title));
