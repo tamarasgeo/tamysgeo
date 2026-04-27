@@ -70,7 +70,7 @@
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
     }
-    .hero-grid { position: relative; z-index: 1; }
+    .hero-grid { position: relative; z-index: 2; }
     .hero-title { font-size: clamp(3rem, 4vw, 5rem); line-height: 0.95; margin-bottom: 1.2rem; letter-spacing: -0.04em; animation: textGlow 2s ease-out; }
     @keyframes textGlow {
       from { text-shadow: 0 0 20px rgba(159, 124, 254, 0.5); }
@@ -87,6 +87,11 @@
     .hero-image:hover { transform: scale(1.05); }
     .hero-image img { display: block; width: 100%; height: auto; object-fit: cover; }
     .hero-wave { position: absolute; bottom: 10%; left: 0; width: 100%; height: 320px; pointer-events: none; background-image: radial-gradient(circle at 20% 30%, rgba(159, 124, 254, 0.18), transparent 18%), radial-gradient(circle at 80% 20%, rgba(111, 60, 247, 0.12), transparent 20%); }
+    .hero-lines { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+    .hero-lines svg { width: 100%; height: 100%; }
+    .hero-line { fill: none; stroke: rgba(159, 124, 254, 0.95); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 36px rgba(159, 124, 254, 0.35)); }
+    .hero-line.soft { stroke: rgba(111, 60, 247, 0.6); stroke-width: 3; opacity: 0.8; }
+    .hero-line.alt { stroke: rgba(255, 255, 255, 0.45); stroke-width: 2.5; stroke-dasharray: 18 14; opacity: 0.7; }
     .section { padding: 80px 0; position: relative; z-index: 1; }
     .section-soft { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border-radius: 40px; padding: 80px 1.5rem; margin: 0 auto; }
     .section-title { font-size: clamp(2.2rem, 2.8vw, 3rem); margin-bottom: 0.75rem; font-weight: 700; letter-spacing: -0.04em; text-align: center; }
@@ -188,6 +193,13 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="hero-lines">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+        <path class="hero-line" d="M120 260C240 220 360 180 520 210C700 250 830 340 950 360C1110 390 1210 330 1320 290" />
+        <path class="hero-line soft" d="M80 520C210 460 330 420 520 450C690 480 810 530 940 510C1090 490 1180 430 1320 400" />
+        <path class="hero-line alt" d="M100 680C220 620 350 580 520 610C700 650 840 720 970 700C1120 670 1210 620 1320 590" />
+      </svg>
     </div>
     <div class="hero-wave"></div>
   </header>
