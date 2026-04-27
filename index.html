@@ -3,1814 +3,324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tamara Sepúlveda — Geógrafa Profesional | Especialista en Análisis Espacial</title>
-  <meta name="description" content="Geógrafa profesional especializada en análisis geoespacial, teledetección y modelación espacial. Experiencia en minería, cambio climático y sistemas GIS.">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <title>Tamysgeo | Geógrafa especializada en Geomática</title>
+  <meta name="description" content="Portafolio de Tamysgeo, geógrafa especializada en geomática, teledetección y análisis espacial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08090f;
+      --surface: #121528;
+      --surface-soft: rgba(255, 255, 255, 0.06);
+      --surface-strong: #1f2140;
+      --fg: #f8f9ff;
+      --muted: #b3b7d5;
+      --brand: #9f7cfe;
+      --brand-strong: #6f3cf7;
+      --brand-soft: rgba(159, 124, 254, 0.16);
+      --shadow: 0 22px 70px rgba(0, 0, 0, 0.26);
+      --radius: 28px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, rgba(159, 124, 254, 0.18), transparent 22%),
+                  radial-gradient(circle at bottom right, rgba(107, 40, 217, 0.16), transparent 25%),
+                  linear-gradient(180deg, #05070f 0%, #090c16 100%);
+      color: var(--fg);
+    }
+    .navbar {
+      background: rgba(8, 9, 15, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(159, 124, 254, 0.15);
+      z-index: 10;
+    }
+    .navbar-brand { font-weight: 700; letter-spacing: 0.02em; color: #fff !important; }
+    .navbar-nav .nav-link { color: rgba(255, 255, 255, 0.72) !important; font-weight: 500; }
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: #fff !important; }
+    .hero { min-height: 100vh; position: relative; padding: 120px 0 80px; overflow: hidden; }
+    .hero::before, .hero::after {
+      content: ''; position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.55; z-index: 0;
+    }
+    .hero::before { width: 520px; height: 520px; top: -120px; left: -80px; background: rgba(159, 124, 254, 0.32); }
+    .hero::after { width: 420px; height: 420px; bottom: -80px; right: -60px; background: rgba(111, 60, 247, 0.24); }
+    .hero-grid { position: relative; z-index: 1; }
+    .hero-title { font-size: clamp(3rem, 4vw, 5rem); line-height: 0.95; margin-bottom: 1.2rem; letter-spacing: -0.04em; }
+    .hero-subtitle { color: #d5d7f8; font-size: 1.15rem; margin-bottom: 1.8rem; max-width: 640px; line-height: 1.75; }
+    .hero-copy { max-width: 660px; color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.9; margin-bottom: 2rem; }
+    .hero-buttons .btn { min-width: 170px; padding: 0.95rem 1.6rem; border-radius: 999px; font-weight: 600; }
+    .btn-primary { background: linear-gradient(135deg, #9f7cfe 0%, #7f3cf8 100%); border: 0; color: white; box-shadow: 0 20px 50px rgba(111, 60, 247, 0.32); }
+    .btn-outline-light { color: #f8f9ff; border-color: rgba(255, 255, 255, 0.28); }
+    .hero-image { max-width: 420px; border-radius: 50%; border: 8px solid rgba(255, 255, 255, 0.14); box-shadow: 0 40px 90px rgba(0, 0, 0, 0.32); overflow: hidden; position: relative; margin: 0 auto; }
+    .hero-image img { display: block; width: 100%; height: auto; object-fit: cover; }
+    .hero-wave { position: absolute; bottom: 10%; left: 0; width: 100%; height: 320px; pointer-events: none; background-image: radial-gradient(circle at 20% 30%, rgba(159, 124, 254, 0.18), transparent 18%), radial-gradient(circle at 80% 20%, rgba(111, 60, 247, 0.12), transparent 20%); }
+    .section { padding: 80px 0; position: relative; z-index: 1; }
+    .section-soft { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border-radius: 40px; padding: 80px 1.5rem; margin: 0 auto; }
+    .section-title { font-size: clamp(2.2rem, 2.8vw, 3rem); margin-bottom: 0.75rem; font-weight: 700; letter-spacing: -0.04em; text-align: center; }
+    .section-description { color: var(--muted); max-width: 760px; margin: 0 auto 3rem; text-align: center; line-height: 1.8; }
+    .card-soft, .skill-card, .slider-card { background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.08)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18); color: #f3f4ff; }
+    .skill-card { padding: 2rem; min-height: 260px; }
+    .skill-card h3 { margin-top: 1rem; font-size: 1.35rem; font-weight: 700; }
+    .skill-card p { color: rgba(255, 255, 255, 0.78); line-height: 1.8; margin-top: 1rem; }
+    .feature-pill { display: inline-flex; gap: 0.5rem; align-items: center; background: rgba(159, 124, 254, 0.14); color: #f8f9ff; padding: 0.55rem 1rem; border-radius: 999px; font-size: 0.92rem; margin-top: 1rem; border: 1px solid rgba(159, 124, 254, 0.22); }
+    .feature-pill span { width: 10px; height: 10px; border-radius: 999px; background: #9f7cfe; display: inline-block; }
+    .portfolio-card { min-height: 430px; overflow: hidden; }
+    .portfolio-card img { height: 240px; width: 100%; object-fit: cover; transition: transform 0.4s ease; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .portfolio-card:hover img { transform: scale(1.02); }
+    .portfolio-card-body { padding: 1.6rem; }
+    .portfolio-card h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.85rem; }
+    .portfolio-card p { color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+    .slider-panel { display: flex; gap: 1.25rem; margin-top: 1.75rem; scroll-behavior: smooth; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 0.25rem; -webkit-overflow-scrolling: touch; }
+    .slider-panel::-webkit-scrollbar { height: 12px; }
+    .slider-panel::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 999px; }
+    .slider-panel::-webkit-scrollbar-thumb { background: rgba(159,124,254,0.45); border-radius: 999px; }
+    .slider-card { padding: 1.5rem; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; scroll-snap-align: start; min-width: 280px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
+    .slider-card img { width: 100%; height: 190px; object-fit: cover; border-radius: 20px; margin-bottom: 1.1rem; }
+    .slider-card h5 { font-size: 1.1rem; margin-bottom: 0.8rem; color: #fff; }
+    .slider-card p { color: rgba(255, 255, 255, 0.76); line-height: 1.7; flex: 1; }
+    .slider-actions { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
+    .slider-actions button { min-width: 52px; min-height: 52px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); color: #fff; border-radius: 50%; font-size: 1.4rem; transition: transform 0.25s ease, background 0.25s ease; }
+    .slider-actions button:hover { transform: translateY(-2px); background: rgba(159, 124, 254, 0.2); }
+    .contact-panel { background: linear-gradient(180deg, rgba(159, 124, 254, 0.14), rgba(111, 60, 247, 0.08)); border: 1px solid rgba(159, 124, 254, 0.18); border-radius: 32px; padding: 2rem; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18); }
+    .contact-panel h3 { margin-bottom: 1rem; font-size: 2rem; }
+    .contact-panel p { color: rgba(255, 255, 255, 0.8); line-height: 1.8; margin-bottom: 1.5rem; }
+    .contact-box { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+    .contact-card { padding: 1.4rem 1.45rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 22px; }
+    .contact-card h6 { color: #f8f9ff; font-size: 0.95rem; margin-bottom: 0.45rem; font-weight: 600; }
+    .contact-card a, .contact-card p { color: rgba(255, 255, 255, 0.72); margin: 0; word-break: break-word; }
+    footer { padding: 2rem 0; text-align: center; color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; }
+    .small-link { color: rgb(159, 124, 254); text-decoration: none; }
+    @media (max-width: 992px) { .hero-grid { gap: 2rem; } }
+    @media (max-width: 768px) { .hero-image { max-width: 300px; } .slider-actions { gap: 0.75rem; } .slider-card { min-height: 320px; } }
+    @media (max-width: 576px) { .hero { padding-top: 100px; } .section { padding: 60px 0; } .hero-title { font-size: 2.75rem; } .hero-subtitle, .hero-copy { font-size: 0.98rem; } }
+  </style>
 </head>
 <body>
-  <!-- NAVIGATION -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#hero">Tamara Sepúlveda</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand" href="#hero">Tamysgeo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#expertise">Experiencia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#career">Trayectoria</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">Acerca</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Especialización</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Galería</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <!-- HERO -->
-  <section id="hero" class="hero">
+  <header id="hero" class="hero">
     <div class="container">
-      <div class="row align-items-center min-vh-100">
-        <div class="col-lg-8">
-          <h1 class="display-1 fw-bold mb-4">
-            Geógrafa Profesional
-            <span class="text-primary">Especialista en Análisis Espacial</span>
-          </h1>
-          <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.7;">
-            Transformo datos geoespaciales en soluciones prácticas para minería, medio ambiente y planificación territorial.
-            Experta en teledetección, sistemas GIS y modelación espacial.
-          </p>
-          <div class="d-flex gap-3 flex-wrap">
-            <a href="#projects" class="btn btn-primary btn-lg">Ver mis proyectos</a>
-            <a href="#contact" class="btn btn-outline-primary btn-lg">Hablemos</a>
+      <div class="row align-items-center hero-grid g-5">
+        <div class="col-lg-7">
+          <p class="mb-3 feature-pill"><span></span>Geógrafa especializada en Geomática</p>
+          <h1 class="hero-title">Conecto territorio, datos y decisiones con mapas que hablan.</h1>
+          <p class="hero-subtitle">Soy Tamysgeo: geógrafa profesional con enfoque en geomática, teledetección y análisis espacial para proyectos territoriales, clima y desarrollo sostenible.</p>
+          <p class="hero-copy">Diseño mapas inteligentes, transformo imágenes satelitales en soluciones y construyo análisis que orientan decisiones de territorio. Trabajo con SIG, drones, sensores y modelación espacial para contar historias del paisaje.</p>
+          <div class="hero-buttons d-flex flex-wrap gap-3">
+            <a class="btn btn-primary" href="#contact">Escríbeme</a>
+            <a class="btn btn-outline-light" href="#portfolio">Ver proyectos</a>
           </div>
         </div>
-        <div class="col-lg-4 text-center">
-          <img src="img/certificaciones/1.png" alt="Tamara Sepúlveda" class="img-fluid rounded-circle shadow-lg" style="max-width: 300px;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERTISE -->
-  <section id="expertise" class="py-5">
-    <div class="container">
-      <h2 class="section-title">Áreas de Especialización</h2>
-
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="expertise-card">
-            <div class="expertise-icon">🛰️</div>
-            <h4>Teledetección</h4>
-            <p>Análisis de imágenes satelitales (MODIS, Landsat, Sentinel) para monitoreo ambiental y agrícola.</p>
-            <div class="skill-tags">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">R</span>
-              <span class="skill-tag">QGIS</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="expertise-card">
-            <div class="expertise-icon">🗺️</div>
-            <h4>Sistemas GIS</h4>
-            <p>Desarrollo de mapas temáticos, análisis espacial y dashboards interactivos para toma de decisiones.</p>
-            <div class="skill-tags">
-              <span class="skill-tag">ArcGIS Pro</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">Dashboards</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="expertise-card">
-            <div class="expertise-icon">🌱</div>
-            <h4>Cambio Climático</h4>
-            <p>Evaluación de vulnerabilidades territoriales y desarrollo de planes de acción climática.</p>
-            <div class="skill-tags">
-              <span class="skill-tag">Planificación</span>
-              <span class="skill-tag">Diagnóstico</span>
-              <span class="skill-tag">Mitigación</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="expertise-card">
-            <div class="expertise-icon">⛏️</div>
-            <h4>Minería</h4>
-            <p>Análisis geoespacial para optimización de operaciones mineras y gestión ambiental.</p>
-            <div class="skill-tags">
-              <span class="skill-tag">BHP</span>
-              <span class="skill-tag">Codelco</span>
-              <span class="skill-tag">SQM</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="expertise-card">
-            <div class="expertise-icon">📊</div>
-            <h4>Modelación Espacial</h4>
-            <p>Desarrollo de índices espectrales (NDVI, NDWI, LST, SAVI, TWI) y análisis predictivos.</p>
-            <div class="skill-tags">
-              <span class="skill-tag">Machine Learning</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">R</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="expertise-card">
-            <div class="expertise-icon">🤖</div>
-            <h4>Automatización</h4>
-            <p>Procesamiento masivo de datos geoespaciales y desarrollo de flujos de trabajo eficientes.</p>
-            <div class="skill-tags">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">APIs</span>
-              <span class="skill-tag">Workflows</span>
-            </div>
+        <div class="col-lg-5 text-center">
+          <div class="hero-image shadow-lg">
+            <img src="img/0W0.jpg" alt="Foto Tamysgeo" loading="eager">
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- CAREER HISTORY -->
-  <section id="career" class="py-5">
-    <div class="container">
-      <h2 class="section-title">Trayectoria Profesional</h2>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">Jun 2025 - Dic 2025</div>
-        <h4>Líder de Inteligencia Geoespacial</h4>
-        <p class="company">AMBIOTECK (TECH4YOU) • Servicios a minería</p>
-        <p class="location">Providencia, Santiago</p>
-        <ul>
-          <li>Diseño e implementación de sistemas GIS en tiempo real para integración de datos internos</li>
-          <li>Desarrollo de dashboards interactivos para clientes B2B: BHP, Anglo American, Codelco, SQM</li>
-          <li>Liderazgo de proyecto de automatización geoespacial y creación de API geoespacial</li>
-          <li>Reportes técnicos para equipos en faena y clientes externos</li>
-        </ul>
-        <div>
-          <span class="tag">Frontend</span>
-          <span class="tag">Javascript</span>
-          <span class="tag">Dashboards</span>
-          <span class="tag">Inteligencia espacial</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">Nov 2024 - Jul 2025</div>
-        <h4>Analista Geoespacial</h4>
-        <p class="company">CINNDA (Centro de Innovación y Diseño Avanzado) • Departamento de Geomática</p>
-        <p class="location">Recoleta, Santiago</p>
-        <ul>
-          <li>Procesamiento masivo de imágenes satelitales (MODIS, Landsat, Sentinel) mediante Python/R</li>
-          <li>Elaboración de cartografías especializadas y actualización de bases de datos espaciales</li>
-          <li>Desarrollo de índices espectrales (NDVI, NDWI, LST, SAVI, TWI)</li>
-          <li>Modelación espacial avanzada y apoyo a equipo científico en proyectos de innovación</li>
-          <li>Automatización de descarga y procesamiento de imágenes satelitales</li>
-        </ul>
-        <div>
-          <span class="tag">Python</span>
-          <span class="tag">R</span>
-          <span class="tag">Teledetección</span>
-          <span class="tag">QGIS</span>
-          <span class="tag">Automatización</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">Ago 2023 - Nov 2023</div>
-        <h4>Encargada de Diagnóstico PACCC</h4>
-        <p class="company">Municipalidad de Pichilemu • Departamento de Medio Ambiente</p>
-        <p class="location">Pichilemu, Región de O'Higgins</p>
-        <ul>
-          <li>Desarrollo del Plan de Acción Comunal de Cambio Climático según Ley 21.455</li>
-          <li>Elaboración de perfil de amenazas climáticas y análisis de vulnerabilidad territorial</li>
-          <li>Identificación de factores de sensibilidad e impactos del cambio climático</li>
-          <li>Categorización territorial y diagnóstico ambiental comunal</li>
-        </ul>
-        <div>
-          <span class="tag">Cambio Climático</span>
-          <span class="tag">Planificación Territorial</span>
-          <span class="tag">Diagnóstico</span>
-          <span class="tag">GIS</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PERSONAL PROJECTS -->
-  <section id="projects" class="py-5">
-    <div class="container">
-      <h2 class="section-title">Proyectos Personales</h2>
-
-      <div id="projects-grid" class="row g-4">
-        <!-- Projects will be loaded here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <h2 class="section-title text-start mb-4">Hablemos de tu proyecto</h2>
-          <p class="lead text-muted mb-5" style="font-size: 1.1rem; line-height: 1.7;">
-            ¿Necesitas análisis geoespacial, procesamiento de datos satelitales o desarrollo de soluciones GIS?
-            Estoy disponible para proyectos y colaboraciones.
-          </p>
-
-          <div class="contact-info">
-            <div class="contact-icon">📧</div>
-            <div class="contact-text">
-              <h6>Email</h6>
-              <p><a href="mailto:thamafl0@gmail.com">thamafl0@gmail.com</a></p>
-            </div>
-          </div>
-
-          <div class="contact-info">
-            <div class="contact-icon">📱</div>
-            <div class="contact-text">
-              <h6>Teléfono</h6>
-              <p><a href="tel:+56993303257">+56 9 9330 3257</a></p>
-            </div>
-          </div>
-
-          <div class="contact-info">
-            <div class="contact-icon">📍</div>
-            <div class="contact-text">
-              <h6>Ubicación</h6>
-              <p>Región Metropolitana, Chile</p>
-            </div>
-          </div>
-
-          <div class="contact-info">
-            <div class="contact-icon">🌐</div>
-            <div class="contact-text">
-              <h6>Redes</h6>
-              <p>
-                <a href="https://www.linkedin.com/in/tamara-sep%C3%BAlveda-774093300/" class="me-3">LinkedIn</a>
-                <a href="https://github.com/tamarasgeo" class="me-3">GitHub</a>
-                <a href="https://www.youtube.com/@tamygeo">YouTube</a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body p-4">
-              <h5 class="card-title mb-4">Sobre mí</h5>
-              <p class="mb-0" style="line-height: 1.8; color: var(--muted); font-size: 1rem;">
-                Desde pequeña he sentido curiosidad por la tierra, por los datos, por la ciencia.
-                Quizás por eso elegí la geografía: porque es una forma de escuchar.<br><br>
-
-                Mi misión es difundir a través de lo que se pueda observar, interpretar lo invisible.<br><br>
-                Cada mapa, para mí, es una conversación. Y hay algo esperando ser dicho,
-                dado que el territorio tiene mucho que contar.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="py-4">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <p class="mb-0 text-muted small">© 2024 Tamara Sepúlveda. Todos los derechos reservados.</p>
-        </div>
-        <div class="col-md-6 text-md-end">
-          <p class="mb-0 text-muted small">Hecho con ❤️ y mucho café</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <style>
-    :root {
-      --brand-50: #faf5ff;
-      --brand-100: #f3e8ff;
-      --brand-200: #e9d5ff;
-      --brand-300: #d8b4fe;
-      --brand-400: #c084fc;
-      --brand-500: #a855f7;
-      --brand-600: #9333ea;
-      --brand-700: #7c2d12;
-      --brand-800: #581c87;
-      --brand-900: #4c1d95;
-      --muted: #6b7280;
-      --light: #f8fafc;
-      --dark: #1f2937;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, var(--brand-50) 0%, white 100%);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-
-    .navbar {
-      background: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--brand-600) !important;
-    }
-
-    .nav-link {
-      font-weight: 500;
-      color: var(--muted) !important;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover {
-      color: var(--brand-600) !important;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-800) 100%);
-      color: white;
-      padding: 8rem 0 6rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      opacity: 0.9;
-      margin-bottom: 2rem;
-      max-width: 600px;
-    }
-
-    .btn-primary {
-      background: white;
-      color: var(--brand-600);
-      border: none;
-      padding: 0.75rem 2rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-primary:hover {
-      background: var(--brand-50);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .btn-outline-primary {
-      border: 2px solid white;
-      color: white;
-      background: transparent;
-      padding: 0.75rem 2rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .btn-outline-primary:hover {
-      background: white;
-      color: var(--brand-600);
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-
-    .expertise-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 2rem;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      height: 100%;
-    }
-
-    .expertise-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .expertise-icon {
-      width: 4rem;
-      height: 4rem;
-      background: linear-gradient(135deg, var(--brand-500), var(--brand-600));
-      border-radius: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: white;
-    }
-
-    .expertise-card h4 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--dark);
-    }
-
-    .expertise-card p {
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .skill-tags {
-      margin-top: 1rem;
-    }
-
-    .skill-tag {
-      background: var(--brand-100);
-      color: var(--brand-700);
-      padding: 0.25rem 0.75rem;
-      border-radius: 2rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      margin: 0.25rem;
-      display: inline-block;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 1rem;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--brand-600), var(--brand-400));
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 3rem;
-      padding-left: 3rem;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -2.5rem;
-      top: 0.5rem;
-      width: 1rem;
-      height: 1rem;
-      background: var(--brand-600);
-      border-radius: 50%;
-      border: 3px solid white;
-      box-shadow: var(--shadow);
-    }
-
-    .timeline-date {
-      color: var(--brand-600);
-      font-weight: 600;
-      font-size: 0.875rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-item h4 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--dark);
-    }
-
-    .company {
-      color: var(--brand-600);
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .location {
-      color: var(--muted);
-      font-size: 0.875rem;
-      margin-bottom: 1rem;
-    }
-
-    .timeline-item ul {
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    .timeline-item li {
-      margin-bottom: 0.5rem;
-    }
-
-    .tag {
-      background: var(--brand-100);
-      color: var(--brand-700);
-      padding: 0.25rem 0.75rem;
-      border-radius: 2rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      margin: 0.125rem;
-      display: inline-block;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      height: 100%;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .project-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover .project-image {
-      transform: scale(1.05);
-    }
-
-    .project-content {
-      padding: 1.5rem;
-    }
-
-    .project-title {
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--dark);
-    }
-
-    .project-description {
-      color: var(--muted);
-      font-size: 0.875rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .project-tag {
-      background: var(--brand-100);
-      color: var(--brand-700);
-      padding: 0.25rem 0.5rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-
-    .contact-info {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: white;
-      border-radius: 0.75rem;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-    }
-
-    .contact-info:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .contact-icon {
-      width: 3rem;
-      height: 3rem;
-      background: linear-gradient(135deg, var(--brand-500), var(--brand-600));
-      border-radius: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      margin-right: 1rem;
-      color: white;
-    }
-
-    .contact-text h6 {
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 0.25rem;
-    }
-
-    .contact-text p {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .contact-text a {
-      color: var(--brand-600);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .contact-text a:hover {
-      color: var(--brand-700);
-    }
-
-    .card {
-      background: white;
-      border-radius: 1rem;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      box-shadow: var(--shadow-lg);
-    }
-
-    .card-title {
-      color: var(--dark);
-      font-weight: 600;
-    }
-
-    footer {
-      background: var(--light);
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1.1rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .timeline {
-        padding-left: 1rem;
-      }
-
-      .timeline-item {
-        padding-left: 2rem;
-      }
-
-      .timeline-dot {
-        left: -2rem;
-      }
-
-      .contact-info {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .contact-icon {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero {
-        padding: 4rem 0 3rem;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .section-title {
-        font-size: 1.75rem;
-      }
-    }
-  </style>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="data/portfolio-data.js"></script>
-  <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Función para limpiar ID de YouTube
-    function cleanYouTubeId(id) {
-      // Si ya es un ID limpio (11 caracteres), devolverlo
-      if (id.length === 11) return id;
-
-      // Extraer ID de URLs completas
-      const patterns = [
-        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
-        /^([^&\n?#]{11})$/
-      ];
-
-      for (const pattern of patterns) {
-        const match = id.match(pattern);
-        if (match) return match[1];
-      }
-
-      // Si no coincide, devolver el ID original
-      return id;
-    }
-
-    // Render Proyectos (combina proyectos y tutoriales)
-    const projectsGrid = document.getElementById('projects-grid');
-    const ytThumb = (id) => `https://img.youtube.com/vi/${cleanYouTubeId(id)}/hqdefault.jpg`;
-
-    function renderProject(p){
-      const col = document.createElement('div');
-      col.className = 'col-md-6 col-lg-4';
-      const title = p.title || p.caption || 'Proyecto';
-      col.innerHTML = `
-        <div class="project-card">
-          <img class="project-image" src="${p.src}" alt="${title}" data-index="${title}" data-type="project">
-          <div class="project-content">
-            <h5 class="project-title">${title}</h5>
-            <p class="project-description">${p.description}</p>
-          </div>
-        </div>`;
-      return col;
-    }
-
-    function renderTutorial(t){
-      const clean = cleanYouTubeId(t.id);
-      const col = document.createElement('div');
-      col.className = 'col-md-6 col-lg-4';
-      col.innerHTML = `
-        <div class="project-card">
-          <a target="_blank" href="https://www.youtube.com/watch?v=${clean}">
-            <img class="project-image" src="${ytThumb(clean)}" alt="${t.title}">
-          </a>
-          <div class="project-content">
-            <h5 class="project-title">${t.title}</h5>
-            <p class="project-description">${t.description}</p>
-            <div class="project-tags">
-              ${(t.tags||[]).map(tag=>`<span class='project-tag'>${tag}</span>`).join('')}
-            </div>
-          </div>
-        </div>`;
-      return col;
-    }
-
-    // Agregar proyectos y tutoriales al grid
-    projects.forEach(p=> projectsGrid.appendChild(renderProject(p)));
-    tutorials.forEach(t=> projectsGrid.appendChild(renderTutorial(t)));
-
-    // Lightbox
-    const projectThumbs = document.querySelectorAll('.project-image');
-    const lbBackdrop = document.querySelector('.lightbox-backdrop');
-    let lbIndex = 0;
-    let currentGallery = [];
-
-    function openLB(i, gallery) {
-      currentGallery = gallery;
-      lbIndex = i;
-      const it = currentGallery[lbIndex];
-      const lbImg = document.getElementById('lb-img');
-      const lbCap = document.getElementById('lb-cap');
-      lbImg.src = it.src;
-      lbCap.textContent = it.caption || it.title || '';
-      lbBackdrop.style.display = 'flex';
-    }
-
-    function closeLB(){
-      if (!lbBackdrop) return;
-      lbBackdrop.style.display = 'none';
-      currentGallery = [];
-    }
-
-    function prevLB(){
-      if (!currentGallery.length) return;
-      lbIndex = (lbIndex - 1 + currentGallery.length) % currentGallery.length;
-      openLB(lbIndex, currentGallery);
-    }
-
-    function nextLB(){
-      if (!currentGallery.length) return;
-      lbIndex = (lbIndex + 1) % currentGallery.length;
-      openLB(lbIndex, currentGallery);
-    }
-
-    if(lbBackdrop) {
-      document.addEventListener('click', (e)=>{
-        if(e.target.classList.contains('project-image') && !e.target.closest('a')){
-          const title = e.target.getAttribute('data-index');
-          const idx = projects.findIndex(p => (p.title === title || p.caption === title));
-          if(idx >= 0) openLB(idx, projects);
-        }
-        if(e.target.classList.contains('lb-close') || e.target === lbBackdrop){
-          closeLB();
-        }
-        if(e.target.classList.contains('lb-prev')) prevLB();
-        if(e.target.classList.contains('lb-next')) nextLB();
-      });
-
-      document.addEventListener('keydown', (e)=>{
-        if(lbBackdrop.style.display === 'flex'){
-          if(e.key === 'ArrowLeft') prevLB();
-          if(e.key === 'ArrowRight') nextLB();
-          if(e.key === 'Escape') closeLB();
-        }
-      });
-
-      let touchStartX = null;
-      lbBackdrop.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; }, {passive:true});
-      lbBackdrop.addEventListener('touchend', (e)=>{
-        if(touchStartX === null) return;
-        const dx = e.changedTouches[0].screenX - touchStartX;
-        if(Math.abs(dx) > 40){ dx > 0 ? prevLB() : nextLB(); }
-        touchStartX = null;
-      }, {passive:true});
-    }
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  </script>
-
-  <div class="lightbox-backdrop">
-    <div class="lightbox position-relative">
-      <img id="lb-img" src="" alt="Vista ampliada">
-      <div class="lightbox-caption" id="lb-cap"></div>
-      <button class="lb-btn lb-prev">‹</button>
-      <button class="lb-btn lb-next">›</button>
-      <button class="lb-btn lb-close">✕</button>
-    </div>
-  </div>
-
-  <style>
-    .lightbox-backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      backdrop-filter: blur(5px);
-    }
-
-    .lightbox {
-      max-width: 90vw;
-      max-height: 90vh;
-      position: relative;
-    }
-
-    .lightbox img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .lightbox-caption {
-      position: absolute;
-      bottom: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 1.1rem;
-      font-weight: 500;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 8px 16px;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-    }
-
-    .lb-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.9);
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--brand-600);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lb-prev {
-      left: -70px;
-    }
-
-    .lb-next {
-      right: -70px;
-    }
-
-    .lb-close {
-      top: -70px;
-      right: 0;
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-    }
-
-    .lb-btn:hover {
-      background: white;
-      transform: translateY(-50%) scale(1.1);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    @media (max-width: 768px) {
-      .lb-prev, .lb-next {
-        display: none;
-      }
-
-      .lightbox-caption {
-        position: static;
-        transform: none;
-        margin-top: 20px;
-        background: rgba(0, 0, 0, 0.8);
-      }
-    }
-  </style>
-</body>
-</html>
-      line-height: 1.7;
-      max-width: 600px;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--fg);
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--brand-600);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .card-body {
-      padding: 2rem;
-    }
-
-    .card-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 1rem;
-    }
-
-    .card-text {
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .skill-badge {
-      background: rgba(139, 92, 246, 0.1);
-      border: 1px solid rgba(139, 92, 246, 0.2);
-      color: var(--brand-300);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      display: inline-block;
-      margin: 0.25rem;
-      transition: all 0.2s ease;
-    }
-
-    .skill-badge:hover {
-      background: rgba(139, 92, 246, 0.2);
-      border-color: var(--brand-500);
-      color: var(--brand-200);
-    }
-
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border), transparent);
-      margin: 4rem 0;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 2.5rem;
-      padding-bottom: 2.5rem;
-      border-left: 2px solid var(--border);
-    }
-
-    .timeline-item:last-child {
-      border-left: 2px solid transparent;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -8px;
-      top: 6px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--brand-600);
-      border: 3px solid var(--bg);
-      box-shadow: var(--shadow);
-    }
-
-    .timeline-date {
-      color: var(--brand-400);
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-item h4 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--fg);
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-item .company {
-      color: var(--brand-400);
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .timeline-item .location {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .timeline-item ul {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--muted);
-      padding-left: 0;
-    }
-
-    .timeline-item ul li {
-      margin-bottom: 0.5rem;
-      position: relative;
-      padding-left: 1rem;
-    }
-
-    .timeline-item ul li::before {
-      content: "•";
-      color: var(--brand-400);
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      color: var(--brand-300);
-      margin-right: 0.5rem;
-      display: inline-block;
-      font-weight: 500;
-    }
-
-    /* Projects */
-    .pf-thumb {
-      aspect-ratio: 16/10;
-      width: 100%;
-      border-radius: 12px;
-      object-fit: cover;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-    }
-
-    .pf-thumb:hover {
-      border-color: var(--brand-600);
-      transform: scale(1.02);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .yt-thumb {
-      aspect-ratio: 16/9;
-      width: 100%;
-      border-radius: 12px;
-      object-fit: cover;
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-    }
-
-    .yt-thumb:hover {
-      border-color: var(--brand-600);
-      box-shadow: var(--shadow-lg);
-    }
-
-    /* Lightbox */
-    .lightbox-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1055;
-      backdrop-filter: blur(5px);
-    }
-
-    .lightbox {
-      max-width: 95vw;
-      max-height: 85vh;
-      position: relative;
-    }
-
-    .lightbox img {
-      max-width: 100%;
-      max-height: 85vh;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      display: block;
-      margin: auto;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .lightbox-caption {
-      color: var(--fg);
-      margin-top: 1rem;
-      text-align: center;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .lb-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(20, 19, 32, 0.9);
-      border: 1px solid var(--border);
-      color: var(--fg);
-      padding: 0.8rem 1rem;
-      border-radius: 50%;
-      cursor: pointer;
-      user-select: none;
-      font-size: 1.5rem;
-      transition: all 0.2s ease;
-      backdrop-filter: blur(10px);
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lb-prev { left: 20px; }
-    .lb-next { right: 20px; }
-    .lb-close {
-      top: 20px;
-      right: 20px;
-      transform: none;
-      font-size: 1.8rem;
-      padding: 0.5rem;
-      width: 40px;
-      height: 40px;
-    }
-
-    .lb-close:hover, .lb-prev:hover, .lb-next:hover {
-      background: var(--brand-600);
-      border-color: var(--brand-600);
-      color: white;
-    }
-
-    /* Contact */
-    .contact-info {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: var(--card-bg);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: all 0.2s ease;
-    }
-
-    .contact-info:hover {
-      border-color: var(--brand-600);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-icon {
-      font-size: 1.5rem;
-      color: var(--brand-400);
-      min-width: 24px;
-    }
-
-    .contact-text h6 {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-weight: 600;
-    }
-
-    .contact-text p {
-      margin: 0;
-      color: var(--fg);
-      font-weight: 500;
-    }
-
-    .contact-text a {
-      color: var(--fg);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .contact-text a:hover {
-      color: var(--brand-400);
-    }
-
-    /* Footer */
-    .footer {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      padding: 2rem 0;
-      margin-top: 4rem;
-    }
-
-    .footer a {
-      color: var(--brand-400);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer a:hover {
-      color: var(--brand-300);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero {
-        padding: 4rem 0 3rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .timeline-item {
-        padding-left: 2rem;
-      }
-
-      .timeline-dot {
-        left: -6px;
-        width: 12px;
-        height: 12px;
-      }
-    }
-
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--border);
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--brand-600);
-    }
-  </style>
-</head>
-<body>
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg sticky-top border-bottom border-opacity-10" style="border-color:#33295a; background:rgba(15,14,23,.95)">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#inicio">TS<span class="text-brand">•</span>Geo</a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div id="nav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="#expertise">Experiencia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#career">Trayectoria</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-          <li class="nav-item"><a class="btn btn-sm btn-brand ms-lg-2" target="_blank" href="https://www.linkedin.com/in/tamara-sep%C3%BAlveda-774093300/">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header id="inicio" class="hero">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h1 class="display-3 fw-800 mb-4">Tamara Sepúlveda</h1>
-          <p class="lead mb-4" style="font-size: 1.4rem; font-weight: 500;">Geógrafa Profesional | Especialista en Inteligencia Geoespacial</p>
-          <p class="mb-5" style="font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 0 auto;">
-            Transformo datos espaciales en soluciones estratégicas mediante análisis geoespacial avanzado,
-            teledetección y automatización de procesos GIS. Experiencia en proyectos para minería, cambio climático y ordenamiento territorial.
-          </p>
-        </div>
-      </div>
-    </div>
+    <div class="hero-wave"></div>
   </header>
-
-  <div class="divider my-5"></div>
-
-  <!-- EXPERTISE -->
-  <section id="expertise" class="py-5">
+  <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">Experiencia</h2>
-
+      <div class="text-center mb-5">
+        <p class="section-title">Geografía aplicada a la geomática</p>
+        <p class="section-description">Trabajo en la intersección entre la ciencia territorial y los datos espaciales. Mis soluciones aportan claridad a decisiones ambientales, de infraestructura y planificación, siempre con un enfoque visual, técnico y humano.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="card-soft p-4 h-100">
+            <h5>Geomática práctica</h5>
+            <p>Mapeo, modelación y análisis espacial para resolver preguntas territoriales con exactitud.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="card-soft p-4 h-100">
+            <h5>Teledetección estratégica</h5>
+            <p>Procesamiento de imágenes satelitales y datos aéreos para monitoreo ambiental y riesgo.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="card-soft p-4 h-100">
+            <h5>Cartografía con propósito</h5>
+            <p>Visualizaciones limpias que comunican hallazgos complejos de manera directa.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="card-soft p-4 h-100">
+            <h5>Proyectos con impacto</h5>
+            <p>Desde DSAS y NDVI hasta análisis de vulnerabilidad, entrego resultados aplicables.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills" class="section section-soft">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-title">Especialización</p>
+        <p class="section-description">Estos son los pilares de mi trabajo profesional en geografía y geomática.</p>
+      </div>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h4 class="card-title">Análisis Geoespacial</h4>
-              <p class="card-text">
-                Desarrollo de estudios territoriales, modelación espacial avanzada y análisis de patrones
-                mediante SIG y teledetección para proyectos complejos en minería y medio ambiente.
-              </p>
-              <div class="mt-3">
-                <span class="skill-badge">ArcGIS Pro</span>
-                <span class="skill-badge">QGIS</span>
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">R</span>
-                <span class="skill-badge">Modelación Espacial</span>
-              </div>
-            </div>
+          <div class="skill-card">
+            <div class="feature-pill"><span></span>Geomática y SIG</div>
+            <h3>Producción espacial integrada</h3>
+            <p>Crea flujos de análisis sobre datos georreferenciados, construye bases territoriales y maneja procesos SIG avanzados.</p>
           </div>
         </div>
-
         <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h4 class="card-title">Procesamiento Satelital</h4>
-              <p class="card-text">
-                Automatización de descarga y procesamiento masivo de imágenes satelitales.
-                Generación de índices espectrales y análisis temporal con Landsat, Sentinel y MODIS.
-              </p>
-              <div class="mt-3">
-                <span class="skill-badge">MODIS</span>
-                <span class="skill-badge">Landsat</span>
-                <span class="skill-badge">Sentinel</span>
-                <span class="skill-badge">NDVI/NDWI</span>
-                <span class="skill-badge">Automatización</span>
-              </div>
-            </div>
+          <div class="skill-card">
+            <div class="feature-pill"><span></span>Teledetección</div>
+            <h3>Imágenes satelitales y drones</h3>
+            <p>Interpreta información remota con índices NDVI, TWI, DSAS y análisis de cambios en la cobertura terrestre.</p>
           </div>
         </div>
-
         <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h4 class="card-title">Desarrollo GIS</h4>
-              <p class="card-text">
-                Creación de dashboards interactivos, APIs geoespaciales y soluciones web
-                para integración de datos en tiempo real y visualización de información territorial.
-              </p>
-              <div class="mt-3">
-                <span class="skill-badge">JavaScript</span>
-                <span class="skill-badge">Dashboards</span>
-                <span class="skill-badge">APIs</span>
-                <span class="skill-badge">Web GIS</span>
-                <span class="skill-badge">Automatización</span>
+          <div class="skill-card">
+            <div class="feature-pill"><span></span>Comunicación territorial</div>
+            <h3>Mapas claros y decisiones</h3>
+            <p>Transforma datos complejos en mapas útiles, informes visuales y presentaciones que apoyan la gestión.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-title">Proyectos y mapas</p>
+        <p class="section-description">Galería de trabajos recientes con cartografía, análisis espacial y soluciones visuales.</p>
+      </div>
+      <div id="projects-grid" class="row g-4"></div>
+    </div>
+  </section>
+  <section id="certifications" class="section section-soft">
+    <div class="container">
+      <div class="text-center mb-4">
+        <p class="section-title">Certificaciones y mapas</p>
+        <p class="section-description">Un panel interactivo para explorar mis certificaciones, mapas temáticos y resultados geoespaciales.</p>
+      </div>
+      <div id="certifications-slider" class="slider-panel"></div>
+      <div class="slider-actions">
+        <button type="button" class="slider-button" data-action="prev">‹</button>
+        <button type="button" class="slider-button" data-action="next">›</button>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <div class="contact-panel">
+            <h3>Conversemos sobre tu proyecto</h3>
+            <p>Si necesitas análisis geoespacial, mapas temáticos o una solución SIG aplicada a territorio, coordenadas y cambio climático, estoy disponible para colaborar.</p>
+            <div class="contact-box">
+              <div class="contact-card">
+                <h6>Email</h6>
+                <p><a href="mailto:tamysgeo@gmail.com">tamysgeo@gmail.com</a></p>
+              </div>
+              <div class="contact-card">
+                <h6>Ubicación</h6>
+                <p>Región Metropolitana, Chile</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider my-5"></div>
-
-  <!-- CAREER HISTORY -->
-  <section id="career" class="py-5">
-    <div class="container">
-      <h2 class="section-title">Trayectoria Profesional</h2>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">Jun 2025 - Dic 2025</div>
-        <h4>Líder de Inteligencia Geoespacial</h4>
-        <p class="company">AMBIOTECK (TECH4YOU) • Servicios a minería</p>
-        <p class="location">Providencia, Santiago</p>
-        <ul>
-          <li>Diseño e implementación de sistemas GIS en tiempo real para integración de datos internos</li>
-          <li>Desarrollo de dashboards interactivos para clientes B2B: BHP, Anglo American, Codelco, SQM</li>
-          <li>Liderazgo de proyecto de automatización geoespacial y creación de API geoespacial</li>
-          <li>Reportes técnicos para equipos en faena y clientes externos</li>
-        </ul>
-        <div>
-          <span class="tag">Frontend</span>
-          <span class="tag">Javascript</span>
-          <span class="tag">Dashboards</span>
-          <span class="tag">Inteligencia espacial</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">Nov 2024 - Jul 2025</div>
-        <h4>Analista Geoespacial</h4>
-        <p class="company">CINNDA (Centro de Innovación y Diseño Avanzado) • Departamento de Geomática</p>
-        <p class="location">Recoleta, Santiago</p>
-        <ul>
-          <li>Procesamiento masivo de imágenes satelitales (MODIS, Landsat, Sentinel) mediante Python/R</li>
-          <li>Elaboración de cartografías especializadas y actualización de bases de datos espaciales</li>
-          <li>Desarrollo de índices espectrales (NDVI, NDWI, LST, SAVI, TWI)</li>
-          <li>Modelación espacial avanzada y apoyo a equipo científico en proyectos de innovación</li>
-          <li>Automatización de descarga y procesamiento de imágenes satelitales</li>
-        </ul>
-        <div>
-          <span class="tag">Python</span>
-          <span class="tag">R</span>
-          <span class="tag">Teledetección</span>
-          <span class="tag">QGIS</span>
-          <span class="tag">Automatización</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">Ago 2023 - Nov 2023</div>
-        <h4>Encargada de Diagnóstico PACCC</h4>
-        <p class="company">Municipalidad de Pichilemu • Departamento de Medio Ambiente</p>
-        <p class="location">Pichilemu, Región de O'Higgins</p>
-        <ul>
-          <li>Desarrollo del Plan de Acción Comunal de Cambio Climático según Ley 21.455</li>
-          <li>Elaboración de perfil de amenazas climáticas y análisis de vulnerabilidad territorial</li>
-          <li>Identificación de factores de sensibilidad e impactos del cambio climático</li>
-          <li>Categorización territorial y diagnóstico ambiental comunal</li>
-        </ul>
-        <div>
-          <span class="tag">Cambio Climático</span>
-          <span class="tag">Planificación Territorial</span>
-          <span class="tag">Diagnóstico</span>
-          <span class="tag">GIS</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider my-5"></div>
-
-  <!-- PERSONAL PROJECTS -->
-  <section id="projects" class="py-5">
-    <div class="container">
-      <h2 class="section-title">Proyectos Personales</h2>
-
-      <div id="projects-grid" class="row g-4">
-        <!-- Projects will be loaded here -->
-      </div>
-    </div>
-  </section>
-
-  <div class="divider my-5"></div>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <div class="row align-items-center g-5">
         <div class="col-lg-6">
-          <h2 class="section-title text-start mb-4">Hablemos de tu proyecto</h2>
-          <p class="lead text-muted mb-5" style="font-size: 1.1rem; line-height: 1.7;">
-            ¿Necesitas análisis geoespacial, procesamiento de datos satelitales o desarrollo de soluciones GIS?
-            Estoy disponible para proyectos y colaboraciones.
-          </p>
-
-          <div class="contact-info">
-            <div class="contact-icon">📧</div>
-            <div class="contact-text">
-              <h6>Email</h6>
-              <p><a href="mailto:thamafl0@gmail.com">thamafl0@gmail.com</a></p>
-            </div>
-          </div>
-
-          <div class="contact-info">
-            <div class="contact-icon">📱</div>
-            <div class="contact-text">
-              <h6>Teléfono</h6>
-              <p><a href="tel:+56993303257">+56 9 9330 3257</a></p>
-            </div>
-          </div>
-
-          <div class="contact-info">
-            <div class="contact-icon">📍</div>
-            <div class="contact-text">
-              <h6>Ubicación</h6>
-              <p>Región Metropolitana, Chile</p>
-            </div>
-          </div>
-
-          <div class="contact-info">
-            <div class="contact-icon">🌐</div>
-            <div class="contact-text">
-              <h6>Redes</h6>
-              <p>
-                <a href="https://www.linkedin.com/in/tamara-sep%C3%BAlveda-774093300/" class="me-3">LinkedIn</a>
-                <a href="https://github.com/tamarasgeo" class="me-3">GitHub</a>
-                <a href="https://www.youtube.com/@tamygeo">YouTube</a>
-              </p>
-            </div>
+          <div class="card-soft p-4">
+            <h5>¿Qué entrego?</h5>
+            <ul style="color: rgba(255,255,255,0.82); line-height:1.85; margin-top:1.2rem; padding-left:1.25rem;">
+              <li>Mapas temáticos y análisis de cobertura, erosión, inundación y vegetación.</li>
+              <li>Procesos de teledetección, cartografía digital y modelación espacial.</li>
+              <li>Informes visuales listos para decisiones institucionales.</li>
+            </ul>
           </div>
         </div>
-
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body p-4">
-              <h5 class="card-title mb-4">Sobre mí</h5>
-              <p class="mb-0" style="line-height: 1.8; color: var(--muted); font-size: 1rem;">
-                Desde pequeña he sentido curiosidad por la tierra, por los datos, por la ciencia.
-                Quizás por eso elegí la geografía: porque es una forma de escuchar.<br><br>
-
-                Mi misión es difundir a través de lo que se pueda observar, interpretar lo invisible.<br><br>
-                Cada mapa, para mí, es una conversación. Y hay algo esperando ser dicho,
-                dado que el territorio tiene mucho que contar.
-              </p>
-            </div>
+      </div>
     </div>
   </section>
-
-  <footer class="footer py-4 border-top" style="border-color:#2d2350; background:#0a0912">
-    <div class="container text-center">
-      <p class="small text-muted mb-2">© <span id="year"></span> Tamara Sepúlveda. Todos los derechos reservados</p>
-      <div class="d-flex justify-content-center gap-3">
-        <a target="_blank" href="https://github.com/tamarasgeo" class="link-muted">GitHub</a>
-        <a target="_blank" href="https://www.linkedin.com/in/tamara-sep%C3%BAlveda-774093300/" class="link-muted">LinkedIn</a>
-        <a target="_blank" href="https://www.youtube.com/@tamygeo" class="link-muted">YouTube</a>
-      </div>
+  <footer>
+    <div class="container">
+      <p>© 2026 Tamysgeo • Portafolio simplificado para geomática y análisis espacial • <a class="small-link" href="mailto:tamysgeo@gmail.com">tamysgeo@gmail.com</a></p>
     </div>
   </footer>
-
-  <!-- ===================== CONFIG ===================== -->
-  <script src="data/portfolio-data.js"></script>
-
-  <!-- ===================== JS ===================== -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="data/portfolio-data.js"></script>
   <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Función para limpiar ID de YouTube
-    function cleanYouTubeId(id) {
-      // Si ya es un ID limpio (11 caracteres), devolverlo
-      if (id.length === 11) return id;
-      
-      // Extraer ID de URLs completas
-      const patterns = [
-        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
-        /^([^&\n?#]{11})$/
-      ];
-      
-      for (const pattern of patterns) {
-        const match = id.match(pattern);
-        if (match) return match[1];
-      }
-      
-      // Si no coincide, devolver el ID original
-      return id;
-    }
-
-    // Render Proyectos (combina proyectos y tutoriales)
-    const projectsGrid = document.getElementById('projects-grid');
-    const ytThumb = (id) => `https://img.youtube.com/vi/${cleanYouTubeId(id)}/hqdefault.jpg`;
-    
-    function renderProject(p){
+    function renderProjectCard(project) {
       const col = document.createElement('div');
-      col.className = 'col-md-6 col-lg-4';
-      const title = p.title || p.caption || 'Proyecto';
+      col.className = 'col-md-6 col-xl-4';
       col.innerHTML = `
-        <div class="card h-100">
-          <img class="pf-thumb" src="${p.src}" alt="${title}" data-index="${title}" data-type="project">
-          <div class="card-body">
-            <h5 class="card-title mb-2">${title}</h5>
-            <p class="small text-muted mb-3">${p.description}</p>
+        <article class="portfolio-card card-soft">
+          <img src="${project.src}" alt="${project.caption}">
+          <div class="portfolio-card-body">
+            <h4>${project.caption}</h4>
+            <p>${project.description}</p>
           </div>
-        </div>`;
+        </article>
+      `;
       return col;
     }
-    
-    function renderTutorial(t){
-      const clean = cleanYouTubeId(t.id);
-      const col = document.createElement('div');
-      col.className = 'col-md-6 col-lg-4';
-      col.innerHTML = `
-        <div class="card h-100">
-          <a target="_blank" href="https://www.youtube.com/watch?v=${clean}">
-            <img class="yt-thumb" src="${ytThumb(clean)}" alt="${t.title}">
-          </a>
-          <div class="card-body">
-            <h5 class="card-title mb-2">${t.title}</h5>
-            ${t.description ? `<p class="small text-muted mb-2">${t.description}</p>` : ''}
-            <div class="d-flex flex-wrap gap-1 mb-3">
-              ${(t.tags||[]).map(tag=>`<span class='tag'>${tag}</span>`).join('')}
-            </div>
-            <a class="btn btn-sm btn-brand w-100" target="_blank" href="https://www.youtube.com/watch?v=${clean}">
-              ▶ Ver tutorial
-            </a>
-          </div>
-        </div>`;
-      return col;
+    function renderSliderCard(item) {
+      const card = document.createElement('div');
+      card.className = 'slider-card';
+      card.innerHTML = `
+        <img src="${item.src}" alt="${item.caption}">
+        <div>
+          <h5>${item.caption}</h5>
+          <p>${item.description}</p>
+        </div>
+      `;
+      return card;
     }
-    
-    // Agregar proyectos y tutoriales al grid
-    projects.forEach(p=> projectsGrid.appendChild(renderProject(p)));
-    tutorials.forEach(t=> projectsGrid.appendChild(renderTutorial(t)));
-
-    // Lightbox
-    const certThumbs = document.querySelectorAll('.cert-thumb');
-    const projectThumbs = document.querySelectorAll('.pf-thumb');
-    const lbBackdrop = document.querySelector('.lightbox-backdrop');
-    let lbIndex = 0;
-    let currentGallery = [];
-
-    function openLB(i, gallery) {
-      currentGallery = gallery;
-      lbIndex = i;
-      const it = currentGallery[lbIndex];
-      const lbImg = document.getElementById('lb-img');
-      const lbCap = document.getElementById('lb-cap');
-      lbImg.src = it.src;
-      lbCap.textContent = it.caption || it.title || '';
-      lbBackdrop.style.display = 'flex';
+    function populatePortfolio() {
+      const projectsGrid = document.getElementById('projects-grid');
+      if (!projectsGrid || !Array.isArray(projects)) return;
+      projects.forEach(project => projectsGrid.appendChild(renderProjectCard(project)));
     }
-
-    function closeLB(){
-      if (!lbBackdrop) return;
-      lbBackdrop.style.display = 'none';
-      currentGallery = [];
+    function populateCertifications() {
+      const slider = document.getElementById('certifications-slider');
+      if (!slider || !Array.isArray(certifications)) return;
+      certifications.forEach(item => slider.appendChild(renderSliderCard(item)));
     }
-
-    function prevLB(){
-      if (!currentGallery.length) return;
-      lbIndex = (lbIndex - 1 + currentGallery.length) % currentGallery.length;
-      openLB(lbIndex, currentGallery);
-    }
-
-    function nextLB(){
-      if (!currentGallery.length) return;
-      lbIndex = (lbIndex + 1) % currentGallery.length;
-      openLB(lbIndex, currentGallery);
-    }
-
-    if(lbBackdrop) {
-      document.addEventListener('click', (e)=>{
-        if(e.target.classList.contains('pf-thumb')){
-          const title = e.target.getAttribute('data-index');
-          const idx = projects.findIndex(p => (p.title === title || p.caption === title));
-          if(idx >= 0) openLB(idx, projects);
-        }
-        if(e.target.classList.contains('lb-close') || e.target === lbBackdrop){
-          closeLB();
-        }
-        if(e.target.classList.contains('lb-prev')) prevLB();
-        if(e.target.classList.contains('lb-next')) nextLB();
+    function connectSliderButtons() {
+      const slider = document.getElementById('certifications-slider');
+      if (!slider) return;
+      document.querySelectorAll('.slider-button').forEach(button => {
+        button.addEventListener('click', () => {
+          const direction = button.dataset.action;
+          const distance = slider.clientWidth * 0.9;
+          slider.scrollBy({ left: direction === 'next' ? distance : -distance, behavior: 'smooth' });
+        });
       });
-
-      document.addEventListener('keydown', (e)=>{
-        if(lbBackdrop.style.display === 'flex'){
-          if(e.key === 'ArrowLeft') prevLB();
-          if(e.key === 'ArrowRight') nextLB();
-          if(e.key === 'Escape') closeLB();
-        }
-      });
-
-      let touchStartX = null;
-      lbBackdrop.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; }, {passive:true});
-      lbBackdrop.addEventListener('touchend', (e)=>{
-        if(touchStartX === null) return;
-        const dx = e.changedTouches[0].screenX - touchStartX;
-        if(Math.abs(dx) > 40){ dx > 0 ? prevLB() : nextLB(); }
-        touchStartX = null;
-      }, {passive:true});
     }
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+    document.addEventListener('DOMContentLoaded', () => {
+      populatePortfolio();
+      populateCertifications();
+      connectSliderButtons();
     });
   </script>
-
-  <div class="lightbox-backdrop">
-    <div class="lightbox position-relative">
-      <img id="lb-img" src="" alt="Vista ampliada">
-      <div class="lightbox-caption" id="lb-cap"></div>
-      <button class="lb-btn lb-prev">‹</button>
-      <button class="lb-btn lb-next">›</button>
-      <button class="lb-btn lb-close">✕</button>
-    </div>
-  </div>
 </body>
 </html>
