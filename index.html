@@ -7,20 +7,21 @@
   <meta name="description" content="Portafolio de Tamysgeo, geógrafa especializada en geomática, teledetección y análisis espacial.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root {
       color-scheme: dark;
+      --font: 'Readex Pro', sans-serif;
       --bg: #08090f;
       --surface: #121528;
-      --surface-soft: rgba(255, 255, 255, 0.06);
+      --surface-soft: rgba(255, 255, 255, 0.08);
       --surface-strong: #1f2140;
       --fg: #f8f9ff;
       --muted: #b3b7d5;
       --brand: #9f7cfe;
       --brand-strong: #6f3cf7;
-      --brand-soft: rgba(159, 124, 254, 0.16);
+      --brand-soft: rgba(159, 124, 254, 0.18);
       --shadow: 0 22px 70px rgba(0, 0, 0, 0.26);
       --radius: 28px;
     }
@@ -30,7 +31,7 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: 'Inter', 'Poppins', sans-serif;
+      font-family: var(--font);
       background: radial-gradient(circle at top left, rgba(159, 124, 254, 0.18), transparent 22%),
                   radial-gradient(circle at bottom right, rgba(107, 40, 217, 0.16), transparent 25%),
                   linear-gradient(180deg, #05070f 0%, #090c16 100%);
@@ -55,9 +56,10 @@
     .hero-title { font-size: clamp(3rem, 4vw, 5rem); line-height: 0.95; margin-bottom: 1.2rem; letter-spacing: -0.04em; }
     .hero-subtitle { color: #d5d7f8; font-size: 1.15rem; margin-bottom: 1.8rem; max-width: 640px; line-height: 1.75; }
     .hero-copy { max-width: 660px; color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.9; margin-bottom: 2rem; }
-    .hero-buttons .btn { min-width: 170px; padding: 0.95rem 1.6rem; border-radius: 999px; font-weight: 600; }
-    .btn-primary { background: linear-gradient(135deg, #9f7cfe 0%, #7f3cf8 100%); border: 0; color: white; box-shadow: 0 20px 50px rgba(111, 60, 247, 0.32); }
-    .btn-outline-light { color: #f8f9ff; border-color: rgba(255, 255, 255, 0.28); }
+    .hero-buttons .btn { min-width: 170px; padding: 0.95rem 1.6rem; border-radius: 999px; font-weight: 700; letter-spacing: 0.01em; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .btn-primary { background: linear-gradient(135deg, #9f7cfe 0%, #7f3cf8 100%); border: 0; color: white; box-shadow: 0 22px 45px rgba(111, 60, 247, 0.28); }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-outline-light { color: #f8f9ff; border-color: rgba(255, 255, 255, 0.28); background: rgba(255, 255, 255, 0.06); }
     .hero-image { max-width: 420px; border-radius: 50%; border: 8px solid rgba(255, 255, 255, 0.14); box-shadow: 0 40px 90px rgba(0, 0, 0, 0.32); overflow: hidden; position: relative; margin: 0 auto; }
     .hero-image img { display: block; width: 100%; height: auto; object-fit: cover; }
     .hero-wave { position: absolute; bottom: 10%; left: 0; width: 100%; height: 320px; pointer-events: none; background-image: radial-gradient(circle at 20% 30%, rgba(159, 124, 254, 0.18), transparent 18%), radial-gradient(circle at 80% 20%, rgba(111, 60, 247, 0.12), transparent 20%); }
@@ -126,8 +128,8 @@
         <div class="col-lg-7">
           <p class="mb-3 feature-pill"><span></span>Geógrafa especializada en Geomática</p>
           <h1 class="hero-title">Conecto territorio, datos y decisiones con mapas que hablan.</h1>
-          <p class="hero-subtitle">Tamara Sepúlveda: Geógrafa profesional con enfoque en geomática, teledetección y análisis espacial para proyectos territoriales, clima y desarrollo sostenible.</p>
-          <p class="hero-copy">Diseño mapas inteligentes, transformo imágenes satelitales en soluciones y construyo análisis que orientan decisiones de territorio. Trabajo con SIG, drones, sensores y modelación espacial para contar historias del paisaje.</p>
+          <p class="hero-subtitle">Soy Tamysgeo: geógrafa especializada en geomática y teledetección, construyendo mapas sensibles para territorio, clima y desarrollo sustentable.</p>
+          <p class="hero-copy">Diseño experiencias geoespaciales con cartografía interactiva, análisis espacio-temporal y soluciones SIG que ayudan a equipos a leer el territorio con claridad.</p>
           <div class="hero-buttons d-flex flex-wrap gap-3">
             <a class="btn btn-primary" href="#contact">Escríbeme</a>
             <a class="btn btn-outline-light" href="#portfolio">Ver proyectos</a>
