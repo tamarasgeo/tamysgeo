@@ -36,46 +36,72 @@
                   radial-gradient(circle at bottom right, rgba(107, 40, 217, 0.16), transparent 25%),
                   linear-gradient(180deg, #05070f 0%, #090c16 100%);
       color: var(--fg);
+      animation: fadeIn 1.2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section {
+      animation: slideUp 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    @keyframes slideUp {
+      to { opacity: 1; transform: translateY(0); }
     }
     .navbar {
       background: rgba(8, 9, 15, 0.92);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(159, 124, 254, 0.15);
       z-index: 10;
+      transition: background 0.3s ease;
     }
-    .navbar-brand { font-weight: 700; letter-spacing: 0.02em; color: #fff !important; }
-    .navbar-nav .nav-link { color: rgba(255, 255, 255, 0.72) !important; font-weight: 500; }
+    .navbar-brand { font-weight: 700; letter-spacing: 0.02em; color: #fff !important; transition: color 0.3s ease; }
+    .navbar-nav .nav-link { color: rgba(255, 255, 255, 0.72) !important; font-weight: 500; transition: color 0.3s ease; }
     .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: #fff !important; }
     .hero { min-height: 100vh; position: relative; padding: 120px 0 80px; overflow: hidden; }
     .hero::before, .hero::after {
-      content: ''; position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.55; z-index: 0;
+      content: ''; position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.55; z-index: 0; animation: float 6s ease-in-out infinite;
     }
     .hero::before { width: 520px; height: 520px; top: -120px; left: -80px; background: rgba(159, 124, 254, 0.32); }
-    .hero::after { width: 420px; height: 420px; bottom: -80px; right: -60px; background: rgba(111, 60, 247, 0.24); }
+    .hero::after { width: 420px; height: 420px; bottom: -80px; right: -60px; background: rgba(111, 60, 247, 0.24); animation-delay: 3s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
     .hero-grid { position: relative; z-index: 1; }
-    .hero-title { font-size: clamp(3rem, 4vw, 5rem); line-height: 0.95; margin-bottom: 1.2rem; letter-spacing: -0.04em; }
+    .hero-title { font-size: clamp(3rem, 4vw, 5rem); line-height: 0.95; margin-bottom: 1.2rem; letter-spacing: -0.04em; animation: textGlow 2s ease-out; }
+    @keyframes textGlow {
+      from { text-shadow: 0 0 20px rgba(159, 124, 254, 0.5); }
+      to { text-shadow: none; }
+    }
     .hero-subtitle { color: #d5d7f8; font-size: 1.15rem; margin-bottom: 1.8rem; max-width: 640px; line-height: 1.75; }
     .hero-copy { max-width: 660px; color: rgba(255, 255, 255, 0.9); font-size: 1rem; line-height: 1.9; margin-bottom: 2rem; }
-    .hero-buttons .btn { min-width: 170px; padding: 0.95rem 1.6rem; border-radius: 999px; font-weight: 700; letter-spacing: 0.01em; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .hero-buttons .btn { min-width: 170px; padding: 0.95rem 1.6rem; border-radius: 999px; font-weight: 700; letter-spacing: 0.01em; transition: all 0.3s ease; }
     .btn-primary { background: linear-gradient(135deg, #9f7cfe 0%, #7f3cf8 100%); border: 0; color: white; box-shadow: 0 22px 45px rgba(111, 60, 247, 0.28); }
-    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 30px 60px rgba(111, 60, 247, 0.4); }
     .btn-outline-light { color: #f8f9ff; border-color: rgba(255, 255, 255, 0.28); background: rgba(255, 255, 255, 0.06); }
-    .hero-image { max-width: 420px; border-radius: 50%; border: 8px solid rgba(255, 255, 255, 0.14); box-shadow: 0 40px 90px rgba(0, 0, 0, 0.32); overflow: hidden; position: relative; margin: 0 auto; }
+    .btn-outline-light:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
+    .hero-image { max-width: 420px; border-radius: 50%; border: 8px solid rgba(255, 255, 255, 0.14); box-shadow: 0 40px 90px rgba(0, 0, 0, 0.32); overflow: hidden; position: relative; margin: 0 auto; transition: transform 0.5s ease; }
+    .hero-image:hover { transform: scale(1.05); }
     .hero-image img { display: block; width: 100%; height: auto; object-fit: cover; }
     .hero-wave { position: absolute; bottom: 10%; left: 0; width: 100%; height: 320px; pointer-events: none; background-image: radial-gradient(circle at 20% 30%, rgba(159, 124, 254, 0.18), transparent 18%), radial-gradient(circle at 80% 20%, rgba(111, 60, 247, 0.12), transparent 20%); }
     .section { padding: 80px 0; position: relative; z-index: 1; }
     .section-soft { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border-radius: 40px; padding: 80px 1.5rem; margin: 0 auto; }
     .section-title { font-size: clamp(2.2rem, 2.8vw, 3rem); margin-bottom: 0.75rem; font-weight: 700; letter-spacing: -0.04em; text-align: center; }
     .section-description { color: var(--muted); max-width: 760px; margin: 0 auto 3rem; text-align: center; line-height: 1.8; }
-    .card-soft, .skill-card, .slider-card { background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.08)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18); color: #f3f4ff; }
+    .card-soft, .skill-card, .slider-card { background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.08)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18); color: #f3f4ff; transition: all 0.3s ease; }
+    .card-soft:hover, .skill-card:hover, .slider-card:hover { transform: translateY(-5px); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25); }
     .skill-card { padding: 2rem; min-height: 260px; }
     .skill-card h3 { margin-top: 1rem; font-size: 1.35rem; font-weight: 700; }
     .skill-card p { color: rgba(255, 255, 255, 0.78); line-height: 1.8; margin-top: 1rem; }
-    .feature-pill { display: inline-flex; gap: 0.5rem; align-items: center; background: rgba(159, 124, 254, 0.14); color: #f8f9ff; padding: 0.55rem 1rem; border-radius: 999px; font-size: 0.92rem; margin-top: 1rem; border: 1px solid rgba(159, 124, 254, 0.22); }
+    .feature-pill { display: inline-flex; gap: 0.5rem; align-items: center; background: rgba(159, 124, 254, 0.14); color: #f8f9ff; padding: 0.55rem 1rem; border-radius: 999px; font-size: 0.92rem; margin-top: 1rem; border: 1px solid rgba(159, 124, 254, 0.22); transition: background 0.3s ease; }
+    .feature-pill:hover { background: rgba(159, 124, 254, 0.2); }
     .feature-pill span { width: 10px; height: 10px; border-radius: 999px; background: #9f7cfe; display: inline-block; }
     .portfolio-card { min-height: 430px; overflow: hidden; }
     .portfolio-card img { height: 240px; width: 100%; object-fit: cover; transition: transform 0.4s ease; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-    .portfolio-card:hover img { transform: scale(1.02); }
+    .portfolio-card:hover img { transform: scale(1.05); }
     .portfolio-card-body { padding: 1.6rem; }
     .portfolio-card h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.85rem; }
     .portfolio-card p { color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
@@ -84,21 +110,42 @@
     .slider-panel::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 999px; }
     .slider-panel::-webkit-scrollbar-thumb { background: rgba(159,124,254,0.45); border-radius: 999px; }
     .slider-card { padding: 1.5rem; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; scroll-snap-align: start; min-width: 280px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
-    .slider-card img { width: 100%; height: 190px; object-fit: cover; border-radius: 20px; margin-bottom: 1.1rem; }
+    .slider-card img { width: 100%; height: 190px; object-fit: cover; border-radius: 20px; margin-bottom: 1.1rem; transition: transform 0.3s ease; }
+    .slider-card:hover img { transform: scale(1.02); }
     .slider-card h5 { font-size: 1.1rem; margin-bottom: 0.8rem; color: #fff; }
     .slider-card p { color: rgba(255, 255, 255, 0.76); line-height: 1.7; flex: 1; }
     .slider-actions { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
-    .slider-actions button { min-width: 52px; min-height: 52px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); color: #fff; border-radius: 50%; font-size: 1.4rem; transition: transform 0.25s ease, background 0.25s ease; }
-    .slider-actions button:hover { transform: translateY(-2px); background: rgba(159, 124, 254, 0.2); }
-    .contact-panel { background: linear-gradient(180deg, rgba(159, 124, 254, 0.14), rgba(111, 60, 247, 0.08)); border: 1px solid rgba(159, 124, 254, 0.18); border-radius: 32px; padding: 2rem; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18); }
+    .slider-actions button { min-width: 52px; min-height: 52px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); color: #fff; border-radius: 50%; font-size: 1.4rem; transition: all 0.3s ease; }
+    .slider-actions button:hover { transform: translateY(-3px); background: rgba(159, 124, 254, 0.2); box-shadow: 0 10px 30px rgba(159, 124, 254, 0.3); }
+    .contact-panel { background: linear-gradient(180deg, rgba(159, 124, 254, 0.14), rgba(111, 60, 247, 0.08)); border: 1px solid rgba(159, 124, 254, 0.18); border-radius: 32px; padding: 2rem; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18); transition: transform 0.3s ease; }
+    .contact-panel:hover { transform: translateY(-5px); }
     .contact-panel h3 { margin-bottom: 1rem; font-size: 2rem; }
     .contact-panel p { color: rgba(255, 255, 255, 0.8); line-height: 1.8; margin-bottom: 1.5rem; }
     .contact-box { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
-    .contact-card { padding: 1.4rem 1.45rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 22px; }
+    .contact-card { padding: 1.4rem 1.45rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 22px; transition: background 0.3s ease; }
+    .contact-card:hover { background: rgba(255, 255, 255, 0.1); }
     .contact-card h6 { color: #f8f9ff; font-size: 0.95rem; margin-bottom: 0.45rem; font-weight: 600; }
     .contact-card a, .contact-card p { color: rgba(255, 255, 255, 0.72); margin: 0; word-break: break-word; }
     footer { padding: 2rem 0; text-align: center; color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; }
     .small-link { color: rgb(159, 124, 254); text-decoration: none; }
+    footer {
+      background: linear-gradient(180deg, rgba(159, 124, 254, 0.05), transparent);
+      padding: 3rem 0 2rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.95rem;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(159, 124, 254, 0.5), transparent);
+    }
     @media (max-width: 992px) { .hero-grid { gap: 2rem; } }
     @media (max-width: 768px) { .hero-image { max-width: 300px; } .slider-actions { gap: 0.75rem; } .slider-card { min-height: 320px; } }
     @media (max-width: 576px) { .hero { padding-top: 100px; } .section { padding: 60px 0; } .hero-title { font-size: 2.75rem; } .hero-subtitle, .hero-copy { font-size: 0.98rem; } }
@@ -128,8 +175,8 @@
         <div class="col-lg-7">
           <p class="mb-3 feature-pill"><span></span>Geógrafa especializada en Geomática</p>
           <h1 class="hero-title">Conecto territorio, datos y decisiones con mapas que hablan.</h1>
-          <p class="hero-subtitle">Soy Tamysgeo: geógrafa especializada en geomática y teledetección, construyendo mapas sensibles para territorio, clima y desarrollo sustentable.</p>
-          <p class="hero-copy">Diseño experiencias geoespaciales con cartografía interactiva, análisis espacio-temporal y soluciones SIG que ayudan a equipos a leer el territorio con claridad.</p>
+          <p class="hero-subtitle">Tamara Sepúlveda: Geógrafa profesional con enfoque en geomática, teledetección y análisis espacial para proyectos territoriales, clima y desarrollo sostenible.</p>
+          <p class="hero-copy">Diseño mapas inteligentes, transformo imágenes satelitales en soluciones y construyo análisis que orientan decisiones de territorio. Trabajo con SIG, drones, sensores y modelación espacial para contar historias del paisaje.</p>
           <div class="hero-buttons d-flex flex-wrap gap-3">
             <a class="btn btn-primary" href="#contact">Escríbeme</a>
             <a class="btn btn-outline-light" href="#portfolio">Ver proyectos</a>
@@ -153,25 +200,25 @@
       <div class="row g-4">
         <div class="col-md-6 col-xl-3">
           <div class="card-soft p-4 h-100">
-            <h5>Geomática práctica</h5>
+            <h5>🧭 Geomática práctica</h5>
             <p>Mapeo, modelación y análisis espacial para resolver preguntas territoriales con exactitud.</p>
           </div>
         </div>
         <div class="col-md-6 col-xl-3">
           <div class="card-soft p-4 h-100">
-            <h5>Teledetección estratégica</h5>
+            <h5>📡 Teledetección estratégica</h5>
             <p>Procesamiento de imágenes satelitales y datos aéreos para monitoreo ambiental y riesgo.</p>
           </div>
         </div>
         <div class="col-md-6 col-xl-3">
           <div class="card-soft p-4 h-100">
-            <h5>Cartografía con propósito</h5>
+            <h5>🎨 Cartografía con propósito</h5>
             <p>Visualizaciones limpias que comunican hallazgos complejos de manera directa.</p>
           </div>
         </div>
         <div class="col-md-6 col-xl-3">
           <div class="card-soft p-4 h-100">
-            <h5>Proyectos con impacto</h5>
+            <h5>🌱 Proyectos con impacto</h5>
             <p>Desde DSAS y NDVI hasta análisis de vulnerabilidad, entrego resultados aplicables.</p>
           </div>
         </div>
@@ -188,21 +235,21 @@
         <div class="col-md-4">
           <div class="skill-card">
             <div class="feature-pill"><span></span>Geomática y SIG</div>
-            <h3>Producción espacial integrada</h3>
+            <h3>🗺️ Producción espacial integrada</h3>
             <p>Crea flujos de análisis sobre datos georreferenciados, construye bases territoriales y maneja procesos SIG avanzados.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="skill-card">
             <div class="feature-pill"><span></span>Teledetección</div>
-            <h3>Imágenes satelitales y drones</h3>
+            <h3>🛰️ Imágenes satelitales y drones</h3>
             <p>Interpreta información remota con índices NDVI, TWI, DSAS y análisis de cambios en la cobertura terrestre.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="skill-card">
             <div class="feature-pill"><span></span>Comunicación territorial</div>
-            <h3>Mapas claros y decisiones</h3>
+            <h3>📊 Mapas claros y decisiones</h3>
             <p>Transforma datos complejos en mapas útiles, informes visuales y presentaciones que apoyan la gestión.</p>
           </div>
         </div>
@@ -221,8 +268,7 @@
   <section id="certifications" class="section section-soft">
     <div class="container">
       <div class="text-center mb-4">
-        <p class="section-title">Certificaciones y mapas</p>
-        <p class="section-description">Un panel interactivo para explorar mis certificaciones, mapas temáticos y resultados geoespaciales.</p>
+        <p class="section-title">Certificaciones</p>
       </div>
       <div id="certifications-slider" class="slider-panel"></div>
       <div class="slider-actions">
